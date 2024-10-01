@@ -123,7 +123,18 @@
                 "%DOC%.tex"
             ],
             "env": {}
+        },
+        {
+          "name": "copy",
+          "command": "cp",
+          "args": ["%OUTDIR%/%DOCFILE%.pdf", "%WORKSPACE_FOLDER%/PDF"]
         }
+    ],
+    "latex-workshop.latex.recipes": [
+      {
+        "name": "latexmk",
+        "tools": ["latexmk", "copy"]
+      },
     ],
     "cSpell.words": [
         "Civita"
