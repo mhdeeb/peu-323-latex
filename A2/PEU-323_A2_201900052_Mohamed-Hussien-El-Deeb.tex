@@ -111,6 +111,35 @@ Find the probability distribution for the momentum of a harmonic oscillator with
 
 \subsection{Solution}
 
+\[
+    y(t) = A \sin (\omega t)
+\]
+
+\[
+    p = y'(t) = A \omega \cos (\omega t)
+\]
+
+\[
+    t = \frac{\cos^{-1}(\frac{p}{A\omega})}{\omega}
+\]
+
+\[
+    p' = - A \omega^2 \sin (\omega t) = - A \omega^2 \sin (\cos^{-1}(\frac{p}{A\omega}))
+\]
+
+\[
+    p_f = \frac{p}{Aw}
+\]
+
+We will absorb all constants and proportionality constants into \(\alpha\)
+\[
+    \rho(p_f) \propto \frac{1}{p'} = \alpha \csc (\cos^{-1}(p_f))
+\]
+
+\[
+    \int^1_{-1} \rho(p_f)\,dp_f = \alpha \int^1_{-1}\csc (\cos^{-1}(p_f))\,dp_f = \frac{\pi}{2}
+\]
+
 \newpage
 
 \section{Problem 4}
