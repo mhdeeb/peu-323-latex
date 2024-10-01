@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: PEU-356 Assignments
+title: PEU-323 Assignments
 message: >-
   If you use this software, please cite it using the
   metadata from this file.
@@ -8,8 +8,7 @@ authors:
   - given-names: Mohamed
     family-names: El-Deeb
     email: s-mohamed.eldeeb@zewailcity.edu.eg
-repository-code: 'https://github.com/mhdeeb/peu-356-latex'
+repository-code: "https://github.com/mhdeeb/peu-323-latex"
 abstract: >-
-  Solutions for Mathematical Methods for Physicists: A
-  Comprehensive Guide for PEU-356 Assignments
+  Solutions for PEU-323 Assignments
 license: MIT

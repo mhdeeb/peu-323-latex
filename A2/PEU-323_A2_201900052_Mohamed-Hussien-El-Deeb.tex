@@ -1,0 +1,142 @@
+\documentclass[12pt]{article}
+\usepackage[svgnames,x11names,table]{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{parskip}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage[thicklines]{cancel}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=RoyalBlue4,
+    urlcolor=RoyalBlue4,
+}
+
+\title{PEU 323 Assignment 2}
+\author{Mohamed Hussien El-Deeb (201900052)}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Problem 1}
+
+\subsection{Problem}
+
+Consider a particle which is free to be anywhere, with equal probability, on a line segment of length \(L\).
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\begin{enumerate}
+    \item Find the normalized probability distribution for such a particle.
+    \item Calculate \(\langle x\rangle\) and \(\sigma_{x}\).
+    \item Calculate the probability of finding the particle within \(\sigma_{x}\) of \(\langle x\rangle\).
+    \item What are the dimensions of the probability density?
+\end{enumerate}
+
+\subsection{Solution}
+
+\section{Problem 2}
+
+\subsection{Problem}
+
+Buffon's Needle: A needle of length \(l\) is dropped at random on a sheet of paper with parallel lines a distance \(l\) apart. What is the probability that it crosses a line?
+
+\subsection{Solution}
+
+\section{Problem 3}
+
+\subsection{Problem}
+
+Find the probability distribution for the momentum of a harmonic oscillator with angular frequency \(\omega\).
+
+\subsection{Solution}
+
+\section{Problem 4}
+
+\subsection{Problem}
+
+Consider the probability density for the location of the electron inside the Hydrogen atom:
+
+\begin{equation}
+    \rho(r)=A e^{-2 r / a_{0}},
+\end{equation}
+
+where \(a_{0}\) is the Bohr radius.
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\begin{enumerate}
+    \item Find \(A\) which normalizes this probability distribution.
+    \item
+          \textit{Hint:}
+
+          \begin{equation}
+              \int_{0}^{\infty} e^{-x} x^{n} d x=n!.
+          \end{equation}
+    \item Calculate the probability for the electron to be found in a sphere, centered about the origin, of radius \(b_{0}\), with \(b_{0}<<a_{0}\).
+
+          \textit{P.S.:} You can do this calculation exactly or approximately. The approximate one is much easier.
+\end{enumerate}
+
+\subsection{Solution}
+
+\section{Problem 5}
+
+\subsection{Problem}
+
+Consider the map
+
+\begin{equation}
+    f: \mathbb{C} \rightarrow \mathbb{R}_{2 \times 2}
+\end{equation}
+
+\[
+    x + iy \mapsto
+    \begin{pmatrix}
+        x & -y \\
+        y & x
+    \end{pmatrix}
+\]
+
+from the complex numbers to the set of \(2 \times 2\) real matrices.
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\begin{enumerate}
+    \item Show that this map is an isomorphism. That is, show that it is invertible and that for \(z_{1}, z_{2} \in \mathbb{C}\),
+
+          \begin{equation}
+              f\left(z_{1} z_{2}\right)=f\left(z_{1}\right) f\left(z_{2}\right)
+          \end{equation}
+
+          and hence prove that, in two dimensions, rotations commute.
+    \item Prove De Moivre's formula for complex numbers:
+          \begin{equation}
+              (r(\cos (\theta)+i \sin (\theta)))^{n}=r^{n}(\cos (n \theta)+i \sin (n \theta))
+          \end{equation}
+
+          and hence prove that
+
+          \begin{equation}
+              \left(\begin{array}{cc}
+                  \cos (\theta) & -\sin (\theta) \\
+                  \sin (\theta) & \cos (\theta)
+              \end{array}\right)^{n}=\left(\begin{array}{cc}
+                      \cos (n \theta) & -\sin (n \theta) \\
+                      \sin (n \theta) & \cos (n \theta)
+                  \end{array}\right)
+          \end{equation}
+\end{enumerate}
+
+\subsection{Solution}
+
+\bibliographystyle{plain}
+\bibliography{references}
+\nocite{El-Deeb_PEU-323_Assignments}
+
+\end{document}
