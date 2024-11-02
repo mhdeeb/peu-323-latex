@@ -1,0 +1,659 @@
+\documentclass[12pt]{article}
+\usepackage[svgnames,x11names,table]{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{parskip}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage[thicklines]{cancel}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=RoyalBlue4,
+    urlcolor=RoyalBlue4,
+}
+
+\title{PEU 323 Assignment 3}
+\author{Mohamed Hussien El-Deeb (201900052)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\renewcommand{\labelenumi}{\textbf{(\alph{enumi})}}
+
+\newpage
+
+\section{Problem 1}
+
+\[
+    \lambda = \frac{h}{p}
+\]
+
+\[
+    E_K = \frac{mv^2}{2} = \frac{p^2}{2m}
+\]
+
+Where $E_K$ is the kinetic energy.
+
+\[
+    p = \sqrt{2 m E_K}
+\]
+
+\[
+    E_K = \frac{f}{2} K_{B} T
+\]
+
+Where f is 3 for nitrogen atoms under room temperature (T = 293.15K) and $K_B = 1.380649 \times 10^{-23} J.K^{-1}$ is boltzmann constant.
+
+\[
+    E_K = \frac{3}{2} K_{B} T
+\]
+
+\[
+    p = \sqrt{3 m K_{B} T}
+    = \sqrt{3 \times 10^{-18} kg \times 1.380649 \times 10^{-23} J.K^{-1} \times 293.15K}
+\]
+
+\[
+    = \sqrt{3 \times 10^{-18} \times 1.380649 \times 10^{-23} \times 293.15} \sqrt{kg.J}
+    \approx 10^{-19} \frac{kg . m}{s}
+\]
+
+\[
+    \lambda = \frac{h}{\sqrt{3 m K_{B} T}}
+\]
+
+\[
+    h = 6.62607015 \times 10^{-34} J.s
+\]
+
+\[
+    m = 10^{-18} kg
+\]
+
+\[
+    kg J = \frac{kg^2 m^2}{s^2}
+\]
+
+\[
+    \lambda = \frac{6.62607015 \times 10^{-34}}{\sqrt{3 \times 10^{-18} \times 1.380649 \times 10^{-23} \times 293.15}} \frac{J.s}{\sqrt{kg J}}
+\]
+
+\[
+    \lambda \approx 6.0 \times 10^{-15} m
+\]
+
+\[
+    d = 10^{-7} m
+\]
+
+\[
+    \frac{h}{p d} = \frac{6.62607015 \times 10^{-34}}{10^{-7} \times 10^{-19}} \frac{J.s^2}{kg . m^2}
+    = 6.6 \times 10^{-8}
+\]
+
+Since the $\Delta p \Delta d >> h$ We don't need to use quantum treatment.
+
+\newpage
+
+\section{Problem 2}
+\[\int_{-\infty}^{\infty} f(y){f(y)}^* \, dy = c\]
+\[
+    F(k) = \frac{1}{2 \pi} \int_{-\infty}^{\infty} f(x) e^{-ikx}\, dx
+\]
+
+\begin{equation*}
+    \begin{split}
+        \int F(k) {F(k)}^*\, dk
+         & = \frac{1}{(2 \pi)^2} \int_{-\infty}^{\infty} \left[\int_{-\infty}^{\infty} f(x) e^{-ikx}\, dx \int_{-\infty}^{\infty} {f(y)}^* e^{iky}\, dy \right]\, dk \\
+         & = \frac{1}{(2 \pi)^2} \int_{-\infty}^{\infty} \left[\int_{-\infty}^{\infty}\int_{-\infty}^{\infty} f(x){f(y)}^* e^{ik(y-x)}\,dx\, dy \right]\, dk         \\
+         & = \frac{1}{(2 \pi)^2} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(x){f(y)}^*\int_{-\infty}^{\infty} e^{ik(y-x)}\,dk\, dx \, dy                      \\
+         & = \frac{1}{2\pi}\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(x){f(y)}^*\delta(y-x) \, dx \, dy                                                       \\
+         & = \frac{1}{2\pi}\int_{-\infty}^{\infty} f(y){f(y)}^* \, dy = \frac{c}{2\pi}
+    \end{split}
+\end{equation*}
+
+We can see that the $F(k)$ is normalizable if c is finite.
+
+\newpage
+\section{Problem 3}
+
+\[
+    \frac{-\hbar^2}{2m}
+    \frac{\partial^2 \psi}{\partial x^2} = i\hbar \frac{\partial \psi}{\partial t}
+\]
+
+\[
+    \Psi(x, t) = \int_{-\infty}^{\infty} \phi(k) e^{i (k x - \omega(k) t)} \, dk
+\]
+
+\[
+    \frac{i\hbar}{2m}
+    \frac{\partial^2 (\int_{-\infty}^{\infty} \phi(k) e^{i (k x - \omega(k) t)} \, dk)}{\partial x^2} = \frac{\partial (\int_{-\infty}^{\infty} \phi(k) e^{i (k x - \omega(k) t)} \, dk)}{\partial t}
+\]
+
+\[
+    \frac{\hbar}{2m}
+    \int_{\infty}^{\infty} k^2 \phi(k) e^{i (k x - \omega(k) t)} \, dk = \int_{\infty}^{\infty} w(k)\phi(k) e^{i (k x - \omega(k) t)} \, dk
+\]
+
+\[
+    w(k) = \frac{k^2\hbar}{2m}
+\]
+
+We can clearly see that both sides of the equation are equal therefore Schrodinger equation is satisfied.
+
+\newpage
+\section{Problem 4}
+
+\begin{enumerate}
+    \item
+          So that in the integral of the probability density $f.f^*$ = 1 leaving us with the same normalization constant.
+    \item
+          \[
+              x' = x - vt, \quad t' = t
+          \]
+          \[
+              \frac{\partial x}{\partial x'} = 1, \quad
+              \frac{\partial t}{\partial x'} = 0, \quad
+              \frac{\partial x}{\partial t'} = v, \quad
+              \frac{\partial t}{\partial t'} = 1
+          \]
+          \[
+              \psi'(x',t') = f(x,t)\psi(x,t)
+          \]
+          \[
+              \frac{-\hbar^2}{2m}
+              \frac{\partial^2 \psi'}{\partial x'^2} = i\hbar \frac{\partial \psi'}{\partial t'}
+          \]
+          \\
+          \begin{equation*}
+              \begin{split}
+                  \frac{\partial \psi'}{\partial x'} & =
+                  \frac{\partial (f(x,t)\psi(x,t))}{\partial x}\frac{\partial x}{\partial x'} +
+                  \frac{\partial (f(x,t)\psi(x,t))}{\partial t}\frac{\partial t}{\partial x'}                                                                       \\
+                                                     & = \frac{\partial (f(x,t)\psi(x,t))}{\partial x}                                                              \\
+                                                     & = \frac{\partial f(x,t)}{\partial x}\psi(x,t) + f(x,t)\frac{\partial \psi(x,t)}{\partial x}                  \\
+                  \frac{\partial^2 \psi'}{\partial x'^2}
+                                                     & = \partial^2_x [f(x,t)]\psi(x,t) + 2\partial_x [f(x,t)]\partial_x[\psi(x,t)] + f(x,t)\partial^2_x[\psi(x,t)] \\
+              \end{split}
+          \end{equation*}
+
+          \begin{equation*}
+              \begin{split}
+                  \frac{\partial \psi'}{\partial t'}
+                   & = \frac{\partial (f(x,t)\psi(x,t))}{\partial x}\frac{\partial x}{\partial t'} +
+                  \frac{\partial (f(x,t)\psi(x,t))}{\partial t}\frac{\partial t}{\partial t'}                                                                                                                              \\
+                   & = v\frac{\partial (f(x,t)\psi(x,t))}{\partial x} +
+                  \frac{\partial (f(x,t)\psi(x,t))}{\partial t}                                                                                                                                                            \\
+                   & = v\left(\frac{\partial f(x,t)}{\partial x}\psi(x,t) + f(x,t)\frac{\partial \psi(x,t)}{\partial x}\right) + \frac{\partial f(x,t)}{\partial t}\psi(x,t) + f(x,t)\frac{\partial \psi(x,t)}{\partial t}
+              \end{split}
+          \end{equation*}
+
+          \begin{equation*}
+              \begin{split}
+                   & \frac{-\hbar^2}{2m}
+                  \left(\partial^2_x [f(x,t)]\psi(x,t) + 2\partial_x [f(x,t)]\partial_x[\psi(x,t)] + f(x,t)\partial^2_x[\psi(x,t)]\right)                                          \\
+                   & = i\hbar \left(v\left(\partial_x [f(x,t)]\psi(x,t) + f(x,t)\partial_x [\psi(x,t)]\right) + \partial_t [f(x,t)]\psi(x,t) + f(x,t)\partial_t [\psi(x,t)]\right)
+              \end{split}
+          \end{equation*}
+
+          Using \[\frac{-\hbar^2}{2m}\frac{\partial^2 \psi}{\partial x^2} = i\hbar \frac{\partial \psi}{\partial t} \]
+          \begin{equation*}
+              \begin{split}
+                   & \frac{-\hbar^2}{2m}
+                  \left(\partial^2_x [f(x,t)]\psi(x,t) + 2\partial_x [f(x,t)]\partial_x[\psi(x,t)] \right)                                          \\
+                   & = i\hbar \left(v\left(\partial_x [f(x,t)]\psi(x,t) + f(x,t)\partial_x [\psi(x,t)]\right) + \partial_t [f(x,t)]\psi(x,t)\right)
+              \end{split}
+          \end{equation*}
+
+          \begin{equation*}
+              \begin{split}
+                   & \left(
+                  \frac{\hbar^2}{2m} \partial^2_x [f(x,t)]
+                  + i\hbar \partial_t [f(x,t)]
+                  + i \hbar v \partial_x [f(x,t)]
+                  \right)\psi(x,t) \\ &
+                  + \left(
+                  \frac{\hbar^2}{m} \partial_x [f(x,t)]
+                  + i \hbar v f(x,t)
+                  \right) \partial_x [\psi(x,t)]
+                  = 0
+              \end{split}
+          \end{equation*}
+
+          \[
+              A = \frac{\hbar^2}{2m} \partial^2_x [f(x,t)]
+              + i\hbar \partial_t [f(x,t)]
+              + i \hbar v \partial_x [f(x,t)]
+          \]
+
+          \[
+              B = \frac{\hbar^2}{m} \partial_x [f(x,t)]
+              + i \hbar v f(x,t)
+          \]
+
+    \item
+
+          Since $\psi$ is an arbitrary function A and B must be zero to satisfy the previous equation.\\
+          Using B
+
+          \[
+              \frac{\hbar^2}{m} \partial_x [f(x,t)]
+              = -i \hbar v f(x,t)
+          \]
+
+          \[
+              \frac{\partial_x [f(x,t)]}{f(x,t)} = -\frac{i m v}{\hbar}
+          \]
+
+          \[
+              \int\frac{d f(x,t)}{f(x,t)} = - \frac{i m v}{\hbar} \int dx
+          \]
+
+          \[
+              \ln(f(x,t)) = -\frac{i m v}{\hbar}x + c(t)
+          \]
+
+          \[
+              f(x,t) = c(t) e^{-\frac{i m v}{\hbar}x}
+          \]
+
+          % \[
+          %     f(x,t) f^*(x,t) = {\left\lvert c(t) \right\rvert}^2 = 1
+          % \]
+
+          % \[
+          %     f(x,t) = \,e^{-\frac{i m v}{\hbar}x}
+          % \]
+
+          Using A
+
+          \[
+              \partial_x [f(x,t)] = -\frac{i m v}{\hbar} c(t) e^{-\frac{i m v}{\hbar}x}
+          \]
+
+          \[
+              \partial^2_x [f(x,t)] = -{(\frac{m v}{\hbar})}^2 c(t)e^{-\frac{i m v}{\hbar}x}
+          \]
+
+          \[
+              \frac{\hbar^2}{2m} \partial^2_x [f(x,t)]
+              + i\hbar \partial_t [f(x,t)]
+              + i \hbar v \partial_x [f(x,t)]
+              = 0
+          \]
+
+          \[
+              i\hbar \partial_t [f(x,t)]
+              =
+              \frac{\hbar^2}{2m}{(\frac{m v}{\hbar})}^2 c(t)e^{-\frac{i m v}{\hbar}x}
+              + i \hbar v \frac{i m v}{\hbar} c(t) e^{-\frac{i m v}{\hbar}x}
+          \]
+
+          \[
+              i\hbar \partial_t [f(x,t)]
+              =
+              \frac{mv^2}{2} c(t)e^{-\frac{i m v}{\hbar}x}
+              - m v^2 c(t) e^{-\frac{i m v}{\hbar}x}
+          \]
+
+          \[
+              =
+              - \frac{mv^2}{2} c(t) e^{-\frac{i m v}{\hbar}x}
+          \]
+
+          \[
+              \partial_t [f(x,t)] = \frac{i mv^2}{2 \hbar} c(t)e^{-\frac{i m v}{\hbar}x}
+          \]
+
+          \[
+              \partial_t [f(x,t)] = \frac{i mv^2}{2 \hbar} f(x,t)
+          \]
+
+          % \[
+          %     f(x,t) = g(x) e^{\frac{i mv^2}{2 \hbar} t}
+          % \]
+
+          % \[
+          %     g(x) e^{\frac{i mv^2}{2 \hbar} t} = e^{-\frac{i m v}{\hbar}x} c(t)
+          % \]
+
+          \[
+              \partial_t [c(t)] = \frac{i mv^2}{2 \hbar} c(t)
+          \]
+
+          \[
+              c(t) = g e^{\frac{i mv^2}{2 \hbar} t}
+          \]
+
+          \[
+              f(x,t) = g e^{-\frac{i m v}{\hbar}x}e^{\frac{i mv^2}{2 \hbar} t}
+              = ge^{-\frac{i m v}{\hbar}(x - \frac{1}{2}vt)}
+          \]
+
+          \[
+              f(x,t) f^*(x,t) = {\left\lvert g \right\rvert}^2 = 1
+          \]
+
+          \[
+              f(x,t) = e^{- \frac{i m v}{\hbar}(x - \frac{1}{2}vt + \phi)}
+          \]
+          \[
+              f(x,t) = g e^{- \frac{i}{\hbar} \left( p_{S'}x - \frac{p_{S'}^2}{2m} t \right)}
+          \]
+    \item
+          \[
+              \psi(x,t) = N e^{ \frac{i}{\hbar} \left( px - \frac{p^2}{2m} t \right)}
+          \]
+          \begin{equation*}
+              \begin{split}
+                  \psi'(x',t') & = f(x,t)\psi(x,t)                                                                  \\
+                               & = Ng e^{ \frac{i}{\hbar} \left( (p-p_{S'})x - \frac{(p^2-p_{S'}^2)}{2m} t \right)}
+              \end{split}
+          \end{equation*}
+          \[
+              x = x'+vt = x'+\frac{p_{S'}}{m}t', \quad t = t'
+          \]
+          \begin{equation*}
+              \begin{split}
+                  \psi'(x',t')
+                   & = Ng e^{ \frac{i}{\hbar} \left( (p-p_{S'})(x'+\frac{p_{S'}}{m}t') - \frac{(p^2-p_{S'}^2)}{2m} t' \right)} \\
+                   & = Ng e^{ \frac{i}{\hbar} \left( (p-p_{S'})x'- \frac{(p^2-2pp_{S'}+p_{S'}^2)}{2m} t' \right)}              \\
+                   & = Ng e^{ \frac{i}{\hbar} \left( (p-p_{S'})x'- \frac{(p-p_{S'})^2}{2m} t' \right)}
+              \end{split}
+          \end{equation*}
+
+          The new momentum is $p - p_{S'}$ and the new energy is $\frac{(p-p_{S'})^2}{2m}$.
+\end{enumerate}
+
+\newpage
+\section{Problem 5}
+
+\[
+    \frac{d}{dt} \langle Q \rangle = \frac{i}{\hbar} \langle [\hat{H}, \hat{Q}] \rangle + \left\langle \frac{\partial Q}{\partial t} \right\rangle
+\]
+
+\[
+    \frac{d}{dt} \langle x p \rangle = 2 \langle T \rangle - \left\langle x \frac{\partial V}{\partial x} \right\rangle
+\]
+
+\[
+    \frac{d}{dt} \langle x p \rangle
+    = \frac{i}{\hbar} \langle [\hat{H}, \hat{x}\hat{p}] \rangle + \left\langle \frac{\partial (x p)}{\partial t} \right\rangle
+\]
+
+\begin{equation*}
+    \begin{split}
+        \left\langle \frac{\partial (x p)}{\partial t} \right\rangle = 0
+    \end{split}
+\end{equation*}
+
+\[
+    \frac{d}{dt} \langle x p \rangle
+    = \frac{i}{\hbar} \langle [\hat{H}, \hat{x}\hat{p}] \rangle
+\]
+
+\[
+    \hat{p} = -i\hbar \frac{d}{dx}, \quad \hat{x} = x
+\]
+
+\[
+    \hat{H} = \frac{\hat{p}^2}{2m} + V
+\]
+
+\begin{equation*}
+    \begin{split}
+        [\hat{H}, \hat{x}\hat{p}] \psi
+         & =  [\frac{\hat{p}^2}{2m} + V, x\hat{p}] \psi                 \\
+         & =  [\frac{\hat{p}^2}{2m}, x\hat{p}] \psi + [V, x\hat{p}]\psi
+    \end{split}
+\end{equation*}
+
+\[
+    [V, x\hat{p}]\psi
+    = [Vx\hat{p} - x\hat{p}V]\psi
+    = -xi\hbar[V \frac{d \psi}{dx} - \frac{d (V\psi)}{dx}]
+\]
+
+\[
+    = -xi\hbar[V \frac{d \psi}{dx} - \frac{dV}{dx}\psi - V\frac{d \psi}{dx}]
+\]
+
+\[
+    = xi\hbar\frac{dV}{dx}\psi
+\]
+
+\begin{equation*}
+    \begin{split}
+        [\frac{\hat{p}^2}{2m}, x\hat{p}] \psi
+         & = [\frac{\hat{p}^2}{2m}, x]\hat{p} + x[\frac{\hat{p}^2}{2m},\hat{p}]                  \\
+         & = \frac{1}{2m}(\hat{p}[\hat{p}, x]\hat{p} + [\hat{p}, x] \hat{p}^2+ x[{p}^2,\hat{p}]) \\
+         & =\frac{1}{2m}(2\hat{p}^2[\hat{p}, x]+ x[{p}^2,\hat{p}])                               \\
+         & = \frac{1}{2m}(2\hat{p}^2(-i\hbar)+ 0)                                                \\
+         & = -i\hbar\frac{\hat{p}^2}{m}
+    \end{split}
+\end{equation*}
+
+\[
+    [\hat{H}, \hat{x}\hat{p}] = -i\hbar\frac{\hat{p}^2}{m} + i\hbar x\frac{dV}{dx}
+\]
+
+\begin{equation*}
+    \begin{split}
+        \frac{d}{dt} \langle x p \rangle
+         & = \frac{i}{\hbar} \langle [\hat{H}, \hat{x}\hat{p}] \rangle            \\
+         & = \langle \frac{\hat{p}^2}{m} \rangle - \langle x\frac{dV}{dx} \rangle \\
+         & = 2 \langle T \rangle - \langle x\frac{dV}{dx} \rangle
+    \end{split}
+\end{equation*}
+
+The left hand side with vanish because p and x are not functions of time.
+
+\newpage
+\section{Problem 6}
+
+\[
+    \hat{T} = -\frac{\hbar^2}{2m} \frac{d^2}{dx^2}
+\]
+
+\[
+    \langle T \rangle = \int_{-\infty}^{\infty} \psi^*(x) \left( -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \right) \psi(x) \, dx
+\]
+
+\begin{equation*}
+    \begin{split}
+        \langle T \rangle & = -\frac{\hbar^2}{2m} \int_{-\infty}^{\infty} \psi^*(x) \frac{d^2 \psi(x)}{dx^2} \, dx                                                                  \\
+                          & =\frac{\hbar^2}{2m}\left[\psi^*(x) \frac{d \psi(x)}{dx}\right]_{-\infty}^{\infty} + \frac{\hbar^2}{2m} \int \left| \frac{d \psi(x)}{dx} \right|^2 \, dx \\
+                          & =\frac{\hbar^2}{2m} \int \left| \frac{d \psi(x)}{dx} \right|^2 \, dx
+    \end{split}
+\end{equation*}
+
+The boundary conditions are zero as both $\psi$ and its derivative are zero at the infinities.
+
+\[
+    \therefore \langle T \rangle \geq 0
+\]
+
+\newpage
+\section{Problem 7}
+\begin{enumerate}
+    \item
+
+          \[
+              \sigma_A^2 = \langle ( \hat{A} - \langle A \rangle ) \Psi | ( \hat{A} - \langle A \rangle ) \Psi \rangle = \langle f | f \rangle
+          \]
+
+          \[
+              \sigma_B^2 = \langle g | g \rangle
+          \]
+
+          \[
+              \sigma_A^2 \sigma_B^2 = \langle f | f \rangle \langle g | g \rangle \geq | \langle f | g \rangle |^2
+          \]
+
+          \[
+              |z|^2 = [\operatorname{Re}(z)]^2 + [\operatorname{Im}(z)]^2 = \left[ \frac{1}{2} (z + z^*) \right]^2 + \left[ \frac{1}{2i} (z - z^*) \right]^2
+          \]
+
+          \[
+              |\langle f | g \rangle |^2 = \left[ \frac{1}{2} (\langle f | g \rangle  + \langle g | f \rangle) \right]^2 + \left[ \frac{1}{2i} (\langle f | g \rangle  - \langle g | f \rangle ) \right]^2
+          \]
+
+          \[
+              \sigma_A^2 \sigma_B^2 \geq \left[ \frac{1}{2} (\langle f | g \rangle + \langle g | f \rangle) \right]^2 + \left[ \frac{1}{2i} (\langle f | g \rangle - \langle g | f \rangle) \right]^2
+          \]
+
+          \[
+              \langle f | g \rangle = \langle \hat{A} \hat{B} \rangle - \langle A \rangle \langle B \rangle, \quad
+              \langle g | f \rangle = \langle \hat{B} \hat{A} \rangle - \langle A \rangle \langle B \rangle
+          \]
+
+          \begin{equation*}
+              \begin{split}
+                  {|\text{Re}|}^2
+                   & = \left[ \frac{1}{2} (\langle \hat{A} \hat{B} \rangle - \langle A \rangle \langle B \rangle + \langle \hat{B} \hat{A} \rangle - \langle A \rangle \langle B \rangle) \right]^2 \\
+                   & = \left[ \frac{1}{2} (\langle \hat{A} \hat{B} \rangle - 2\langle A \rangle \langle B \rangle + \langle \hat{B} \hat{A} \rangle) \right]^2                                      \\
+                   & = \left[ \frac{1}{2} (\langle \hat{A} \hat{B} - 2\langle A \rangle \langle B \rangle + \hat{B} \hat{A} \rangle) \right]^2                                                      \\
+                   & = \frac{1}{4} \langle\hat{D}\rangle^2                                                                                                                                          \\
+              \end{split}
+          \end{equation*}
+
+          \begin{equation*}
+              \begin{split}
+                  {|\text{Im}|}^2
+                   & = \left[ \frac{1}{2i} (\langle \hat{A} \hat{B} \rangle - \langle A \rangle \langle B \rangle - \langle \hat{B} \hat{A} \rangle + \langle A \rangle \langle B \rangle) \right]^2 \\
+                   & = \left[ \frac{1}{2i} (\langle \hat{A} \hat{B} \rangle - \langle \hat{B} \hat{A} \rangle \right]^2                                                                              \\
+                   & =  \left[ \frac{1}{2i} \langle [\hat{A}, \hat{B}] \rangle \right]^2                                                                                                             \\
+                   & = \frac{1}{4} \langle \hat{C} \rangle^2
+              \end{split}
+          \end{equation*}
+
+          \[
+              \sigma_A^2 \sigma_B^2 \geq \frac{1}{4} (\langle \hat{C} \rangle^2 + \langle \hat{D} \rangle^2)
+          \]
+
+    \item
+
+          \begin{equation*}
+              \begin{split}
+                  \langle\hat{C}\rangle^2
+                   & = \left[\langle [\hat{A}, \hat{B}] \rangle \right]^2 \\
+                   & = \left[\langle [\hat{A}, \hat{A}] \rangle \right]^2 \\
+                   & = 0
+              \end{split}
+          \end{equation*}
+
+          \begin{equation*}
+              \begin{split}
+                  \langle\hat{D}\rangle^2
+                   & = \left[\langle \hat{A} \hat{B} - 2\langle A \rangle \langle B \rangle + \hat{B} \hat{A} \rangle \right]^2 \\
+                   & = \left[\langle 2\hat{A}^2 - 2{\langle A \rangle}^2 \rangle \right]^2                                      \\
+                   & = 4\left[\langle\hat{A}^2\rangle - {\langle A \rangle}^2 \right]^2                                         \\
+                   & = 4 \sigma^4_A
+              \end{split}
+          \end{equation*}
+
+          \[
+              \sigma_A^2 =  \frac{1}{2}\langle\hat{D}\rangle
+          \]
+\end{enumerate}
+\newpage
+\section{Problem 8}
+
+\[
+    \langle h | \hat{Q} h \rangle = \langle \hat{Q}  h | h \rangle
+\]
+
+For \( h = f + g \),
+
+\[
+    \langle (f + g) | \hat{Q} (f + g) \rangle = \langle \hat{Q}  (f + g) | (f + g) \rangle
+\]
+
+\[
+    \langle f + g | \hat{Q}f + \hat{Q}g \rangle = \langle \hat{Q}f + \hat{Q}g | f + g \rangle
+\]
+
+\[
+    \langle f | \hat{Q}f \rangle
+    + \langle f | \hat{Q}g \rangle
+    + \langle g | \hat{Q}f \rangle
+    + \langle g | \hat{Q}g \rangle
+    =
+    \langle \hat{Q}f | f \rangle
+    + \langle \hat{Q}f | g \rangle
+    + \langle \hat{Q}g | f \rangle
+    + \langle \hat{Q}g | g \rangle
+\]
+
+\[
+    \because \langle f | \hat{Q}f \rangle = \langle \hat{Q}f | f \rangle, \quad
+    \langle g | \hat{Q}g \rangle = \langle \hat{Q}g | g \rangle
+\]
+
+\[
+    \therefore
+    \langle f | \hat{Q}g \rangle
+    + \langle g | \hat{Q}f \rangle
+    =
+    \langle \hat{Q}f | g \rangle
+    + \langle \hat{Q}g | f \rangle \tag{1}
+\]
+
+For \( h = f + ig \),
+
+\[
+    \langle (f + ig) | \hat{Q} (f + ig) \rangle = \langle \hat{Q}  (f + ig) | (f + ig) \rangle
+\]
+
+\[
+    \langle f + ig | \hat{Q}f + i\hat{Q}g \rangle = \langle \hat{Q}f + i\hat{Q}g | f + ig \rangle
+\]
+
+\[
+    \langle f | \hat{Q}f \rangle
+    + i\langle f | \hat{Q}g \rangle
+    - i\langle g | \hat{Q}f \rangle
+    + \langle g | \hat{Q}g \rangle
+    =
+    \langle \hat{Q}f | f \rangle
+    + i\langle \hat{Q}f | g \rangle
+    - i\langle \hat{Q}g | f \rangle
+    + \langle \hat{Q}g | g \rangle
+\]
+
+\[
+    \because \langle f | \hat{Q}f \rangle = \langle \hat{Q}f | f \rangle, \quad
+    \langle ig | i\hat{Q}g \rangle = \langle i\hat{Q}g | ig \rangle
+\]
+
+\[
+    \therefore
+    \langle f | \hat{Q}g \rangle
+    - \langle g | \hat{Q}f \rangle
+    =
+    \langle \hat{Q}f | g \rangle
+    - \langle \hat{Q}g | f \rangle \tag{2}
+\]
+
+Adding 1 and 2 we get,
+
+\[
+    \langle f | \hat{Q}g \rangle = \langle \hat{Q}f | g \rangle
+\]
+
+\newpage
+\bibliographystyle{plain}
+\bibliography{references}
+\nocite{El-Deeb_PEU-323_Assignments}
+\nocite{griffiths2018introduction}
+
+\end{document}
