@@ -1,0 +1,199 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1.25in]{geometry}
+\usepackage[svgnames,x11names,table]{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{parskip}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage[thicklines]{cancel}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=RoyalBlue4,
+    urlcolor=RoyalBlue4,
+}
+
+\title{PEU 323 Assignment 5}
+\author{Mohamed Hussien El-Deeb (201900052)}
+\date{}
+
+\begin{document}
+
+\renewcommand{\labelenumi}{\textbf{(\alph{enumi})}}
+
+\maketitle
+\tableofcontents
+\newpage
+\section{Problem 1}
+
+\begin{enumerate}
+    \item
+          \begin{equation*}
+              V(x) =
+              \begin{cases}
+                  -\infty \quad & \text{if} \, x = -a \\
+                  -\infty \quad & \text{if} \, x = a  \\
+                  0 \quad       & \, otherwise        \\
+              \end{cases}
+          \end{equation*}
+
+          \begin{equation*}
+              \psi(x) =
+              \begin{cases}
+                  \psi(x)_1 \quad    & \text{if} \, 0 < x < a        \\
+                  \psi(x)_2 \quad    & \text{if} \, a < x < \infty   \\
+                  \pm \psi(-x) \quad & \text{if} \, - \infty < x < 0 \\
+              \end{cases}
+          \end{equation*}
+
+          %   \[
+          %       m = 9.109 \times 10^{-31} kg
+          %   \]
+
+          %   \[
+          %       \hbar = 1.05457182 \times 10^{-34} m^2 kg / s
+          %   \]
+
+          For bound states,
+
+          \[
+              -V_0 < E < 0
+          \]
+
+          Schrodinger equation:
+
+          \[
+              \frac{\hbar^2}{2m}\frac{\partial^2 \psi}{\partial x^2} = -(E - V_0) \psi
+          \]
+
+          For \(0 < x < a \):
+
+          \[
+              \frac{\hbar^2}{2m}\frac{\partial^2 \psi_1}{\partial x^2} = -E \psi_1
+          \]
+
+          \[
+              \frac{\partial^2 \psi_1}{\partial x^2} = k^2 \psi_1
+          \]
+
+          \[
+              \text{where}\; k = \frac{\sqrt{2m E}}{\hbar}
+          \]
+
+          \[
+              \psi_1 = A e^{k x} + B e^{- k x}
+          \]
+
+          For \(a < x < \infty \):
+
+          \[
+              \frac{\hbar^2}{2m}\frac{\partial^2 \psi_2}{\partial x^2} = -E \psi_2
+          \]
+
+          \[
+              \frac{\partial^2 \psi_2}{\partial x^2} = k^2 \psi_2
+          \]
+
+          \[
+              \psi_2 = C e^{- k x} + D e^{k x}
+          \]
+
+          Applying boundary condition at \(x = \infty \)
+
+          \[
+              \psi_2 = C e^{- k x}
+          \]
+
+          Our $\psi$ now is:
+
+          \begin{equation*}
+              \psi(x) =
+              \begin{cases}
+                  A e^{k x} + B e^{- k x} \quad & \text{if} \, 0 < x < a        \\
+                  C e^{- k x} \quad             & \text{if} \, a < x < \infty   \\
+                  \pm \psi(-x) \quad            & \text{if} \, - \infty < x < 0 \\
+              \end{cases}
+          \end{equation*}
+          \begin{equation*}
+              \therefore
+              \psi'(x) =
+              \begin{cases}
+                  k (A e^{k x} - B e^{- k x}) \quad & \text{if} \, 0 < x < a        \\
+                  -k C e^{- k x} \quad              & \text{if} \, a < x < \infty   \\
+                  \pm \psi'(-x) \quad               & \text{if} \, - \infty < x < 0 \\
+              \end{cases}
+          \end{equation*}
+
+          Applying boundary condition at \(x = a\) for \(\psi \)
+
+          \[
+              A e^{2 k a} = C - B \tag{1}\label{equ.1}
+          \]
+
+          Applying boundary condition at \(x = a\) for \(\psi' \)
+
+          \[
+              \lim_{\epsilon \rightarrow 0}{\left[\frac{\hbar^2}{2m} \int_{a-\epsilon}^{a+\epsilon}\frac{\partial^2 \psi}{\partial x^2}\, dx = \int_{a-\epsilon}^{a+\epsilon} V\psi\, dx - E\int_{a-\epsilon}^{a+\epsilon} \psi\, dx \right]}
+          \]
+
+          \[
+              \frac{\partial \psi}{\partial x} \vert_{a+} - \frac{\partial \psi}{\partial x} \vert_{a-} = -\frac{2m V_0}{\hbar^2} \psi(a)
+          \]
+
+          \[
+              k C e^{- k a} + k (A e^{k a} - B e^{- k a}) = \frac{2m V_0}{\hbar^2} C e^{- k a}
+          \]
+
+          \[
+              C e^{- k a} + A e^{k a} - B e^{- k a} = \frac{2m V_0}{k \hbar^2} C e^{- k a}
+          \]
+
+          \[
+              (1 - \frac{2m V_0}{k \hbar^2}) C - B + A e^{2 k a} = 0
+          \]
+
+          \[
+              A e^{2 k a} = (\frac{2m V_0}{k \hbar^2} - 1) C + B \tag{2}\label{equ.2}
+          \]
+
+          \[
+              (\frac{2m V_0}{k \hbar^2} - 1) C + B = C - B
+          \]
+
+          \[
+              (1 - \frac{m V_0}{k \hbar^2}) C = B
+          \]
+
+          \begin{equation*}
+              \psi(x) =
+              \begin{cases}
+                  A e^{k x} + B e^{- k x} \quad & \text{if} \, 0 < x < a        \\
+                  C e^{- k x} \quad             & \text{if} \, a < x < \infty   \\
+                  \pm \psi(-x) \quad            & \text{if} \, - \infty < x < 0 \\
+              \end{cases}
+          \end{equation*}
+
+          \[
+              \frac{\[\partial hat{X}}{\partial t} 
+          \]
+
+    \item
+
+\end{enumerate}
+
+
+\newpage
+
+\bibliographystyle{plain}
+\bibliography{references}
+\nocite{El-Deeb_PEU-323_Assignments}
+
+\end{document}
